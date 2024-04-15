@@ -1,0 +1,9 @@
+<% layout('layouts/boilerplate')%>  <!--yha layouts k boiler plate ko use kiya h-->
+<%- include('../partials/navbar') %>  <!--navbar ko add krne k liye-->
+<ul>
+    <% for(let item of user.cart){  %>
+        <li><%= item.name %> --> <%= item.price %></li>
+   <% }  %>
+
+
+</ul>
