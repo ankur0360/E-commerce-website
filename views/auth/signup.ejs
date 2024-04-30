@@ -1,4 +1,83 @@
-<!-- body bala logic yha pr hoga -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #44447b;
+            padding: 100px;
+            background-image: url('https://images.unsplash.com/photo-1462823985959-022de68638a2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center center;
+            
+        }
+        .col-md-6{
+            position: relative;
+            max-width: 600px;
+            padding: 16px;
+            background: rgba(232, 187, 143, 0.5);
+            border-radius: 15px;
+            box-shadow: 12px 12px 2px 1px rgba(116, 117, 118, 0.425);
+            transition: all .3s;
+            
+        }
+        .col-md-6:hover{
+            box-shadow: -12px 12px 2px -1px rgba(116, 117, 118, 0.425);
+        }
+form {
+    background-color: #d0d7dd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-check {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <!-- body bala logic yha pr hoga -->
 <% layout('layouts/boilerplate')%>  <!--yha layouts k boiler plate ko use kiya h-->
 <%- include('../partials/flash') %>  <!--flash ko add krne k liye-->
 <div class="row">
@@ -35,3 +114,6 @@
     </div>
    
 </div>
+
+</body>
+</html>
