@@ -1,12 +1,48 @@
 <!-- body bala logic yha pr hoga -->
 <% layout('layouts/boilerplate')%>  <!--yha layouts k boiler plate ko use kiya h-->
 <%- include('../partials/navbar') %>  <!--navbar ko add krne k liye-->
-
+<style>
+    body{
+      background-color: rgb(46, 116, 176);
+      background-image: url("https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+            background-position: center center;
+    }
+    .col-6{
+      position: relative;
+            max-width: 600px;
+            padding: 16px;
+            background: rgba(168, 195, 202, 0.325);
+            border-radius: 15px;
+          
+    }
+    #darea{
+      box-sizing: content-box;
+      margin-top: 8px;
+    }
+    .mb-3{
+      box-sizing: content-box;
+      padding:5px;
+      color: rgb(250, 245, 207);
+    }
+    .btn-2{
+      background-color: rgb(236, 161, 12);
+      font-weight: bold;
+      width: 100%;
+      height: 40px; 
+      border-radius:25px ;
+    }
+    .btn-2:hover{
+      background-color: rgb(46, 185, 46);
+    }
+   
+</style>
 <div class="row">
     <div class="col-6 mx-auto">
 
         <form class="needs-validation" action="/products/<%=foundProduct._id%>?_method=PATCH" method="POST" novalidate>
             <div class="mb-3">
+             
                 <label for="naam">Name:</label>
                 <input type="text" class="form-control" name="name" id="naam" placeholder="name of product" value="<%=foundProduct.name%>" required>
                 <div class="valid-feedback">
@@ -40,8 +76,8 @@
                   </div>
             </div>
             <div class="mb-3">
-                <label for="desc">Desc:</label>
-                <textarea name="desc" id="" rows="5" placeholder="Description of product" required><%=foundProduct.desc%></textarea>
+                <label for="desc" id="dtext">Description:</label>
+                <textarea name="desc" id="darea" rows="5"  placeholder="Description of product" required><%=foundProduct.desc%></textarea>
                
                 <div class="valid-feedback">
                     Looks good!
@@ -50,7 +86,7 @@
                     Please enter the Description field.
                   </div>
             </div>
-            <button class="btn btn-sm btn-success" type="submit">Edit Product</button>
+            <button class="btn-2 btn-sm btn-success" type="submit">Edit Product</button>
 
 
         </form>
