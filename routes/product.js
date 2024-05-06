@@ -19,6 +19,17 @@ router.get('/products',async (req, res) => {
    }
 })
 
+router.get("/products/:id/payment_page", async(req, res) => {
+      const productId = req.params.id;
+      // console.log(productId);
+
+   
+      const product_link = await Product.findById(productId,'payment_link');
+      // let payment_site = product.payment_link;
+      console.log(product_link);
+      res.redirect(product_link);
+  
+});
 
 // task 2-to show the form for new products
  router.get('/products/new', isloggedin,(req, res)=>{
@@ -49,6 +60,7 @@ router.get('/products/:id',isloggedin,async (req, res)=>{
    try{
    let {id}= req.params;
     let foundProduct=await Product.findById(id).populate('reviews');      //DB method  for finding product by that id
+   //  console.log(foundProduct);
     res.render('products/show',{foundProduct,msg:req.flash('msg')})
    }
     catch(err){
@@ -92,7 +104,7 @@ router.delete('/products/:id',isloggedin,isproductAuthor,async (req, res)=>{
    const product= await Product.findById(id);   //product ko find kr rhe h kyuki product k delete sai pehle product k andar jakr reviews ko delete krna h
    
    // for(let id of product.reviews){
-   //    await Review.findByIdAndDelete(id);  first way of delete review
+   //    await Review.findByIdAndDelete(id);
    // }
  await Product.findByIdAndDelete(id);   // ye bala method findoneanddelete middleware chla rha hoga
  req.flash('success','  Product deleted successfully.');
