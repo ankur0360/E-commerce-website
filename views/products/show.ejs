@@ -21,9 +21,12 @@
                 <div class="card shadow mx-auto" style="width: 18rem;">
                     <img src="<%=foundProduct.img%>" class="card-img-top" alt="...">
                     <div class="card-body">
+                      
                       <h2 class="card-title"><%=foundProduct.name %></h2>
                       <h5 class="card-title"><%=foundProduct.price %></h5>
                       <p class="card-text"><%=foundProduct.desc %></p>
+                      
+                   
                       <% if(currentUser && currentUser.role =='seller'){ %>
                       <a href="/products/<%=foundProduct._id%>/edit" class="btn btn-sm btn-dark">Edit</a>
                      <% }  %>
@@ -32,7 +35,7 @@
                        <button class="btn btn-sm btn-secondary">Add to cart</button>
                      </form>
 
-                      <a href="#" class="btn btn-sm btn-primary">Buy Product</a>
+                      <a href="<%=foundProduct.payment_link%>" class="btn btn-sm btn-primary">Buy Product</a>
                     </div>
                   </div>      
             </div>
@@ -89,3 +92,5 @@
 </div>
 </body>
 </html>
+
+<!-- https://rzp.io/l/g0LJIwuK12 -->
