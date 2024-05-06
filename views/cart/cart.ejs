@@ -2,7 +2,40 @@
 <%- include('../partials/navbar') %>  <!--navbar ko add krne k liye-->
 <ul>
     <% for(let item of user.cart){  %>
-        <li><%= item.name %> --> <%= item.price %></li>
+       
+        <div class="col-lg-6 mt-3">
+             
+
+
+
+            <div class="card shadow mx-auto" style="width: 18rem;">
+                <img src="<%=item.img%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <h2 class="card-title"><%=item.name %></h2>
+                  <h5 class="card-title"><%=item.price %></h5>
+                  <p class="card-text"><%=item.desc %></p>
+                  <!-- <a href="/products/<%=item._id%>" class="btn btn-primary btn-info">View Product</a> -->
+                  
+               
+                  <!-- <% if(currentUser && currentUser.role =='seller'){ %>
+                  <a href="/products/<%=item._id%>/edit" class="btn btn-sm btn-dark">Edit</a>
+                 <% }  %>
+
+                 <form method="POST" action="/user/<%=item._id%>/add" class="d-inline-block" >
+                   <button class="btn btn-sm btn-secondary">Add to cart</button>
+                 </form> -->
+
+                  <a href="<%=item.payment_link%>" class="btn btn-sm btn-primary">Buy Product</a>
+                  <% if(currentUser && currentUser.role =='seller'){ %>
+                    <form class="d-inline-block" action="/products/<%=item._id%>" method="POST">
+                      <button class="btn btn-sm btn-danger ">Delete</button>
+                    </form>
+                <%  }  %>
+                </div>
+              </div>      
+        </div>
+        
    <% }  %>
 
 
